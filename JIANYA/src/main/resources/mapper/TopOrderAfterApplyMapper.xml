@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.TopOrderAfterApplyMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.entity.model.TopOrderAfterApply">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="order_num" jdbcType="VARCHAR" property="orderNum" />
+    <result column="order_item_num" jdbcType="VARCHAR" property="orderItemNum" />
+    <result column="order_after_num" jdbcType="VARCHAR" property="orderAfterNum" />
+    <result column="user_num" jdbcType="VARCHAR" property="userNum" />
+    <result column="store_num" jdbcType="VARCHAR" property="storeNum" />
+    <result column="purchase_type" jdbcType="TINYINT" property="purchaseType" />
+    <result column="suppiler_num" jdbcType="VARCHAR" property="suppilerNum" />
+    <result column="whole_type" jdbcType="TINYINT" property="wholeType" />
+    <result column="order_type" jdbcType="TINYINT" property="orderType" />
+    <result column="after_type" jdbcType="TINYINT" property="afterType" />
+    <result column="reason_type" jdbcType="TINYINT" property="reasonType" />
+    <result column="reason_name" jdbcType="VARCHAR" property="reasonName" />
+    <result column="reason_des" jdbcType="VARCHAR" property="reasonDes" />
+    <result column="reason_remark" jdbcType="VARCHAR" property="reasonRemark" />
+    <result column="prove_picture" jdbcType="VARCHAR" property="provePicture" />
+    <result column="prove_image" jdbcType="VARCHAR" property="proveImage" />
+    <result column="refund_remark" jdbcType="VARCHAR" property="refundRemark" />
+    <result column="review_type" jdbcType="TINYINT" property="reviewType" />
+    <result column="process_now" jdbcType="TINYINT" property="processNow" />
+    <result column="all_market_price" jdbcType="DECIMAL" property="allMarketPrice" />
+    <result column="total_actually_amount" jdbcType="DECIMAL" property="totalActuallyAmount" />
+    <result column="actually_amount" jdbcType="DECIMAL" property="actuallyAmount" />
+    <result column="coupon_amount" jdbcType="DECIMAL" property="couponAmount" />
+    <result column="income_amount" jdbcType="DECIMAL" property="incomeAmount" />
+    <result column="fee_amount" jdbcType="DECIMAL" property="feeAmount" />
+    <result column="back_fee_type" jdbcType="TINYINT" property="backFeeType" />
+    <result column="back_percent" jdbcType="DECIMAL" property="backPercent" />
+    <result column="back_actually_amount" jdbcType="DECIMAL" property="backActuallyAmount" />
+    <result column="back_coupon_amount" jdbcType="DECIMAL" property="backCouponAmount" />
+    <result column="back_income_amount" jdbcType="DECIMAL" property="backIncomeAmount" />
+    <result column="back_fee_income_amount" jdbcType="DECIMAL" property="backFeeIncomeAmount" />
+    <result column="back_fee_actually_amount" jdbcType="DECIMAL" property="backFeeActuallyAmount" />
+    <result column="compensate_income" jdbcType="DECIMAL" property="compensateIncome" />
+    <result column="compensate_coupon" jdbcType="DECIMAL" property="compensateCoupon" />
+    <result column="compensate_remark" jdbcType="VARCHAR" property="compensateRemark" />
+    <result column="order_pay_channel" jdbcType="TINYINT" property="orderPayChannel" />
+    <result column="pay_channel_order_num" jdbcType="VARCHAR" property="payChannelOrderNum" />
+    <result column="order_pay_num" jdbcType="VARCHAR" property="orderPayNum" />
+    <result column="back_pay_channel_order_num" jdbcType="VARCHAR" property="backPayChannelOrderNum" />
+    <result column="back_order_pay_num" jdbcType="VARCHAR" property="backOrderPayNum" />
+    <result column="refund_status" jdbcType="TINYINT" property="refundStatus" />
+    <result column="refund_time" jdbcType="TIMESTAMP" property="refundTime" />
+    <result column="order_status" jdbcType="INTEGER" property="orderStatus" />
+    <result column="delivery_num" jdbcType="VARCHAR" property="deliveryNum" />
+    <result column="delivery_company" jdbcType="VARCHAR" property="deliveryCompany" />
+    <result column="goods_get_status" jdbcType="TINYINT" property="goodsGetStatus" />
+    <result column="rebate_price" jdbcType="DECIMAL" property="rebatePrice" />
+    <result column="back_account_num" jdbcType="VARCHAR" property="backAccountNum" />
+    <result column="back_bank_name" jdbcType="VARCHAR" property="backBankName" />
+    <result column="goods_send_status" jdbcType="TINYINT" property="goodsSendStatus" />
+    <result column="send_delivery_num" jdbcType="VARCHAR" property="sendDeliveryNum" />
+    <result column="stop_reason" jdbcType="VARCHAR" property="stopReason" />
+    <result column="expand_date" jdbcType="TIMESTAMP" property="expandDate" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="show_status" jdbcType="TINYINT" property="showStatus" />
+    <result column="czt_order_status" jdbcType="TINYINT" property="cztOrderStatus" />
+    <result column="current_processor" jdbcType="VARCHAR" property="currentProcessor" />
+    <result column="send_address" jdbcType="VARCHAR" property="sendAddress" />
+    <result column="tag_one" jdbcType="VARCHAR" property="tagOne" />
+    <result column="tag_two" jdbcType="VARCHAR" property="tagTwo" />
+    <result column="tag_three" jdbcType="VARCHAR" property="tagThree" />
+    <result column="creator" jdbcType="VARCHAR" property="creator" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="updator" jdbcType="VARCHAR" property="updator" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, order_num, order_item_num, order_after_num, user_num, store_num, purchase_type, 
+    suppiler_num, whole_type, order_type, after_type, reason_type, reason_name, reason_des, 
+    reason_remark, prove_picture, prove_image, refund_remark, review_type, process_now, 
+    all_market_price, total_actually_amount, actually_amount, coupon_amount, income_amount, 
+    fee_amount, back_fee_type, back_percent, back_actually_amount, back_coupon_amount, 
+    back_income_amount, back_fee_income_amount, back_fee_actually_amount, compensate_income, 
+    compensate_coupon, compensate_remark, order_pay_channel, pay_channel_order_num, order_pay_num, 
+    back_pay_channel_order_num, back_order_pay_num, refund_status, refund_time, order_status, 
+    delivery_num, delivery_company, goods_get_status, rebate_price, back_account_num, 
+    back_bank_name, goods_send_status, send_delivery_num, stop_reason, expand_date, remark, 
+    show_status, czt_order_status, current_processor, send_address, tag_one, tag_two, 
+    tag_three, creator, create_time, updator, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from top_order_after_apply
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from top_order_after_apply
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.example.demo.entity.model.TopOrderAfterApply">
+    insert into top_order_after_apply (id, order_num, order_item_num, 
+      order_after_num, user_num, store_num, 
+      purchase_type, suppiler_num, whole_type, 
+      order_type, after_type, reason_type, 
+      reason_name, reason_des, reason_remark, 
+      prove_picture, prove_image, refund_remark, 
+      review_type, process_now, all_market_price, 
+      total_actually_amount, actually_amount, coupon_amount, 
+      income_amount, fee_amount, back_fee_type, 
+      back_percent, back_actually_amount, back_coupon_amount, 
+      back_income_amount, back_fee_income_amount, 
+      back_fee_actually_amount, compensate_income, 
+      compensate_coupon, compensate_remark, order_pay_channel, 
+      pay_channel_order_num, order_pay_num, back_pay_channel_order_num, 
+      back_order_pay_num, refund_status, refund_time, 
+      order_status, delivery_num, delivery_company, 
+      goods_get_status, rebate_price, back_account_num, 
+      back_bank_name, goods_send_status, send_delivery_num, 
+      stop_reason, expand_date, remark, 
+      show_status, czt_order_status, current_processor, 
+      send_address, tag_one, tag_two, 
+      tag_three, creator, create_time, 
+      updator, update_time)
+    values (#{id,jdbcType=BIGINT}, #{orderNum,jdbcType=VARCHAR}, #{orderItemNum,jdbcType=VARCHAR}, 
+      #{orderAfterNum,jdbcType=VARCHAR}, #{userNum,jdbcType=VARCHAR}, #{storeNum,jdbcType=VARCHAR}, 
+      #{purchaseType,jdbcType=TINYINT}, #{suppilerNum,jdbcType=VARCHAR}, #{wholeType,jdbcType=TINYINT}, 
+      #{orderType,jdbcType=TINYINT}, #{afterType,jdbcType=TINYINT}, #{reasonType,jdbcType=TINYINT}, 
+      #{reasonName,jdbcType=VARCHAR}, #{reasonDes,jdbcType=VARCHAR}, #{reasonRemark,jdbcType=VARCHAR}, 
+      #{provePicture,jdbcType=VARCHAR}, #{proveImage,jdbcType=VARCHAR}, #{refundRemark,jdbcType=VARCHAR}, 
+      #{reviewType,jdbcType=TINYINT}, #{processNow,jdbcType=TINYINT}, #{allMarketPrice,jdbcType=DECIMAL}, 
+      #{totalActuallyAmount,jdbcType=DECIMAL}, #{actuallyAmount,jdbcType=DECIMAL}, #{couponAmount,jdbcType=DECIMAL}, 
+      #{incomeAmount,jdbcType=DECIMAL}, #{feeAmount,jdbcType=DECIMAL}, #{backFeeType,jdbcType=TINYINT}, 
+      #{backPercent,jdbcType=DECIMAL}, #{backActuallyAmount,jdbcType=DECIMAL}, #{backCouponAmount,jdbcType=DECIMAL}, 
+      #{backIncomeAmount,jdbcType=DECIMAL}, #{backFeeIncomeAmount,jdbcType=DECIMAL}, 
+      #{backFeeActuallyAmount,jdbcType=DECIMAL}, #{compensateIncome,jdbcType=DECIMAL}, 
+      #{compensateCoupon,jdbcType=DECIMAL}, #{compensateRemark,jdbcType=VARCHAR}, #{orderPayChannel,jdbcType=TINYINT}, 
+      #{payChannelOrderNum,jdbcType=VARCHAR}, #{orderPayNum,jdbcType=VARCHAR}, #{backPayChannelOrderNum,jdbcType=VARCHAR}, 
+      #{backOrderPayNum,jdbcType=VARCHAR}, #{refundStatus,jdbcType=TINYINT}, #{refundTime,jdbcType=TIMESTAMP}, 
+      #{orderStatus,jdbcType=INTEGER}, #{deliveryNum,jdbcType=VARCHAR}, #{deliveryCompany,jdbcType=VARCHAR}, 
+      #{goodsGetStatus,jdbcType=TINYINT}, #{rebatePrice,jdbcType=DECIMAL}, #{backAccountNum,jdbcType=VARCHAR}, 
+      #{backBankName,jdbcType=VARCHAR}, #{goodsSendStatus,jdbcType=TINYINT}, #{sendDeliveryNum,jdbcType=VARCHAR}, 
+      #{stopReason,jdbcType=VARCHAR}, #{expandDate,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR}, 
+      #{showStatus,jdbcType=TINYINT}, #{cztOrderStatus,jdbcType=TINYINT}, #{currentProcessor,jdbcType=VARCHAR}, 
+      #{sendAddress,jdbcType=VARCHAR}, #{tagOne,jdbcType=VARCHAR}, #{tagTwo,jdbcType=VARCHAR}, 
+      #{tagThree,jdbcType=VARCHAR}, #{creator,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updator,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.demo.entity.model.TopOrderAfterApply">
+    insert into top_order_after_apply
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="orderNum != null">
+        order_num,
+      </if>
+      <if test="orderItemNum != null">
+        order_item_num,
+      </if>
+      <if test="orderAfterNum != null">
+        order_after_num,
+      </if>
+      <if test="userNum != null">
+        user_num,
+      </if>
+      <if test="storeNum != null">
+        store_num,
+      </if>
+      <if test="purchaseType != null">
+        purchase_type,
+      </if>
+      <if test="suppilerNum != null">
+        suppiler_num,
+      </if>
+      <if test="wholeType != null">
+        whole_type,
+      </if>
+      <if test="orderType != null">
+        order_type,
+      </if>
+      <if test="afterType != null">
+        after_type,
+      </if>
+      <if test="reasonType != null">
+        reason_type,
+      </if>
+      <if test="reasonName != null">
+        reason_name,
+      </if>
+      <if test="reasonDes != null">
+        reason_des,
+      </if>
+      <if test="reasonRemark != null">
+        reason_remark,
+      </if>
+      <if test="provePicture != null">
+        prove_picture,
+      </if>
+      <if test="proveImage != null">
+        prove_image,
+      </if>
+      <if test="refundRemark != null">
+        refund_remark,
+      </if>
+      <if test="reviewType != null">
+        review_type,
+      </if>
+      <if test="processNow != null">
+        process_now,
+      </if>
+      <if test="allMarketPrice != null">
+        all_market_price,
+      </if>
+      <if test="totalActuallyAmount != null">
+        total_actually_amount,
+      </if>
+      <if test="actuallyAmount != null">
+        actually_amount,
+      </if>
+      <if test="couponAmount != null">
+        coupon_amount,
+      </if>
+      <if test="incomeAmount != null">
+        income_amount,
+      </if>
+      <if test="feeAmount != null">
+        fee_amount,
+      </if>
+      <if test="backFeeType != null">
+        back_fee_type,
+      </if>
+      <if test="backPercent != null">
+        back_percent,
+      </if>
+      <if test="backActuallyAmount != null">
+        back_actually_amount,
+      </if>
+      <if test="backCouponAmount != null">
+        back_coupon_amount,
+      </if>
+      <if test="backIncomeAmount != null">
+        back_income_amount,
+      </if>
+      <if test="backFeeIncomeAmount != null">
+        back_fee_income_amount,
+      </if>
+      <if test="backFeeActuallyAmount != null">
+        back_fee_actually_amount,
+      </if>
+      <if test="compensateIncome != null">
+        compensate_income,
+      </if>
+      <if test="compensateCoupon != null">
+        compensate_coupon,
+      </if>
+      <if test="compensateRemark != null">
+        compensate_remark,
+      </if>
+      <if test="orderPayChannel != null">
+        order_pay_channel,
+      </if>
+      <if test="payChannelOrderNum != null">
+        pay_channel_order_num,
+      </if>
+      <if test="orderPayNum != null">
+        order_pay_num,
+      </if>
+      <if test="backPayChannelOrderNum != null">
+        back_pay_channel_order_num,
+      </if>
+      <if test="backOrderPayNum != null">
+        back_order_pay_num,
+      </if>
+      <if test="refundStatus != null">
+        refund_status,
+      </if>
+      <if test="refundTime != null">
+        refund_time,
+      </if>
+      <if test="orderStatus != null">
+        order_status,
+      </if>
+      <if test="deliveryNum != null">
+        delivery_num,
+      </if>
+      <if test="deliveryCompany != null">
+        delivery_company,
+      </if>
+      <if test="goodsGetStatus != null">
+        goods_get_status,
+      </if>
+      <if test="rebatePrice != null">
+        rebate_price,
+      </if>
+      <if test="backAccountNum != null">
+        back_account_num,
+      </if>
+      <if test="backBankName != null">
+        back_bank_name,
+      </if>
+      <if test="goodsSendStatus != null">
+        goods_send_status,
+      </if>
+      <if test="sendDeliveryNum != null">
+        send_delivery_num,
+      </if>
+      <if test="stopReason != null">
+        stop_reason,
+      </if>
+      <if test="expandDate != null">
+        expand_date,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="showStatus != null">
+        show_status,
+      </if>
+      <if test="cztOrderStatus != null">
+        czt_order_status,
+      </if>
+      <if test="currentProcessor != null">
+        current_processor,
+      </if>
+      <if test="sendAddress != null">
+        send_address,
+      </if>
+      <if test="tagOne != null">
+        tag_one,
+      </if>
+      <if test="tagTwo != null">
+        tag_two,
+      </if>
+      <if test="tagThree != null">
+        tag_three,
+      </if>
+      <if test="creator != null">
+        creator,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updator != null">
+        updator,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="orderNum != null">
+        #{orderNum,jdbcType=VARCHAR},
+      </if>
+      <if test="orderItemNum != null">
+        #{orderItemNum,jdbcType=VARCHAR},
+      </if>
+      <if test="orderAfterNum != null">
+        #{orderAfterNum,jdbcType=VARCHAR},
+      </if>
+      <if test="userNum != null">
+        #{userNum,jdbcType=VARCHAR},
+      </if>
+      <if test="storeNum != null">
+        #{storeNum,jdbcType=VARCHAR},
+      </if>
+      <if test="purchaseType != null">
+        #{purchaseType,jdbcType=TINYINT},
+      </if>
+      <if test="suppilerNum != null">
+        #{suppilerNum,jdbcType=VARCHAR},
+      </if>
+      <if test="wholeType != null">
+        #{wholeType,jdbcType=TINYINT},
+      </if>
+      <if test="orderType != null">
+        #{orderType,jdbcType=TINYINT},
+      </if>
+      <if test="afterType != null">
+        #{afterType,jdbcType=TINYINT},
+      </if>
+      <if test="reasonType != null">
+        #{reasonType,jdbcType=TINYINT},
+      </if>
+      <if test="reasonName != null">
+        #{reasonName,jdbcType=VARCHAR},
+      </if>
+      <if test="reasonDes != null">
+        #{reasonDes,jdbcType=VARCHAR},
+      </if>
+      <if test="reasonRemark != null">
+        #{reasonRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="provePicture != null">
+        #{provePicture,jdbcType=VARCHAR},
+      </if>
+      <if test="proveImage != null">
+        #{proveImage,jdbcType=VARCHAR},
+      </if>
+      <if test="refundRemark != null">
+        #{refundRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewType != null">
+        #{reviewType,jdbcType=TINYINT},
+      </if>
+      <if test="processNow != null">
+        #{processNow,jdbcType=TINYINT},
+      </if>
+      <if test="allMarketPrice != null">
+        #{allMarketPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="totalActuallyAmount != null">
+        #{totalActuallyAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="actuallyAmount != null">
+        #{actuallyAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="couponAmount != null">
+        #{couponAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="incomeAmount != null">
+        #{incomeAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="feeAmount != null">
+        #{feeAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="backFeeType != null">
+        #{backFeeType,jdbcType=TINYINT},
+      </if>
+      <if test="backPercent != null">
+        #{backPercent,jdbcType=DECIMAL},
+      </if>
+      <if test="backActuallyAmount != null">
+        #{backActuallyAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="backCouponAmount != null">
+        #{backCouponAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="backIncomeAmount != null">
+        #{backIncomeAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="backFeeIncomeAmount != null">
+        #{backFeeIncomeAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="backFeeActuallyAmount != null">
+        #{backFeeActuallyAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="compensateIncome != null">
+        #{compensateIncome,jdbcType=DECIMAL},
+      </if>
+      <if test="compensateCoupon != null">
+        #{compensateCoupon,jdbcType=DECIMAL},
+      </if>
+      <if test="compensateRemark != null">
+        #{compensateRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="orderPayChannel != null">
+        #{orderPayChannel,jdbcType=TINYINT},
+      </if>
+      <if test="payChannelOrderNum != null">
+        #{payChannelOrderNum,jdbcType=VARCHAR},
+      </if>
+      <if test="orderPayNum != null">
+        #{orderPayNum,jdbcType=VARCHAR},
+      </if>
+      <if test="backPayChannelOrderNum != null">
+        #{backPayChannelOrderNum,jdbcType=VARCHAR},
+      </if>
+      <if test="backOrderPayNum != null">
+        #{backOrderPayNum,jdbcType=VARCHAR},
+      </if>
+      <if test="refundStatus != null">
+        #{refundStatus,jdbcType=TINYINT},
+      </if>
+      <if test="refundTime != null">
+        #{refundTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderStatus != null">
+        #{orderStatus,jdbcType=INTEGER},
+      </if>
+      <if test="deliveryNum != null">
+        #{deliveryNum,jdbcType=VARCHAR},
+      </if>
+      <if test="deliveryCompany != null">
+        #{deliveryCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsGetStatus != null">
+        #{goodsGetStatus,jdbcType=TINYINT},
+      </if>
+      <if test="rebatePrice != null">
+        #{rebatePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="backAccountNum != null">
+        #{backAccountNum,jdbcType=VARCHAR},
+      </if>
+      <if test="backBankName != null">
+        #{backBankName,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsSendStatus != null">
+        #{goodsSendStatus,jdbcType=TINYINT},
+      </if>
+      <if test="sendDeliveryNum != null">
+        #{sendDeliveryNum,jdbcType=VARCHAR},
+      </if>
+      <if test="stopReason != null">
+        #{stopReason,jdbcType=VARCHAR},
+      </if>
+      <if test="expandDate != null">
+        #{expandDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="showStatus != null">
+        #{showStatus,jdbcType=TINYINT},
+      </if>
+      <if test="cztOrderStatus != null">
+        #{cztOrderStatus,jdbcType=TINYINT},
+      </if>
+      <if test="currentProcessor != null">
+        #{currentProcessor,jdbcType=VARCHAR},
+      </if>
+      <if test="sendAddress != null">
+        #{sendAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="tagOne != null">
+        #{tagOne,jdbcType=VARCHAR},
+      </if>
+      <if test="tagTwo != null">
+        #{tagTwo,jdbcType=VARCHAR},
+      </if>
+      <if test="tagThree != null">
+        #{tagThree,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null">
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updator != null">
+        #{updator,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.entity.model.TopOrderAfterApply">
+    update top_order_after_apply
+    <set>
+      <if test="orderNum != null">
+        order_num = #{orderNum,jdbcType=VARCHAR},
+      </if>
+      <if test="orderItemNum != null">
+        order_item_num = #{orderItemNum,jdbcType=VARCHAR},
+      </if>
+      <if test="orderAfterNum != null">
+        order_after_num = #{orderAfterNum,jdbcType=VARCHAR},
+      </if>
+      <if test="userNum != null">
+        user_num = #{userNum,jdbcType=VARCHAR},
+      </if>
+      <if test="storeNum != null">
+        store_num = #{storeNum,jdbcType=VARCHAR},
+      </if>
+      <if test="purchaseType != null">
+        purchase_type = #{purchaseType,jdbcType=TINYINT},
+      </if>
+      <if test="suppilerNum != null">
+        suppiler_num = #{suppilerNum,jdbcType=VARCHAR},
+      </if>
+      <if test="wholeType != null">
+        whole_type = #{wholeType,jdbcType=TINYINT},
+      </if>
+      <if test="orderType != null">
+        order_type = #{orderType,jdbcType=TINYINT},
+      </if>
+      <if test="afterType != null">
+        after_type = #{afterType,jdbcType=TINYINT},
+      </if>
+      <if test="reasonType != null">
+        reason_type = #{reasonType,jdbcType=TINYINT},
+      </if>
+      <if test="reasonName != null">
+        reason_name = #{reasonName,jdbcType=VARCHAR},
+      </if>
+      <if test="reasonDes != null">
+        reason_des = #{reasonDes,jdbcType=VARCHAR},
+      </if>
+      <if test="reasonRemark != null">
+        reason_remark = #{reasonRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="provePicture != null">
+        prove_picture = #{provePicture,jdbcType=VARCHAR},
+      </if>
+      <if test="proveImage != null">
+        prove_image = #{proveImage,jdbcType=VARCHAR},
+      </if>
+      <if test="refundRemark != null">
+        refund_remark = #{refundRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewType != null">
+        review_type = #{reviewType,jdbcType=TINYINT},
+      </if>
+      <if test="processNow != null">
+        process_now = #{processNow,jdbcType=TINYINT},
+      </if>
+      <if test="allMarketPrice != null">
+        all_market_price = #{allMarketPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="totalActuallyAmount != null">
+        total_actually_amount = #{totalActuallyAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="actuallyAmount != null">
+        actually_amount = #{actuallyAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="couponAmount != null">
+        coupon_amount = #{couponAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="incomeAmount != null">
+        income_amount = #{incomeAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="feeAmount != null">
+        fee_amount = #{feeAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="backFeeType != null">
+        back_fee_type = #{backFeeType,jdbcType=TINYINT},
+      </if>
+      <if test="backPercent != null">
+        back_percent = #{backPercent,jdbcType=DECIMAL},
+      </if>
+      <if test="backActuallyAmount != null">
+        back_actually_amount = #{backActuallyAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="backCouponAmount != null">
+        back_coupon_amount = #{backCouponAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="backIncomeAmount != null">
+        back_income_amount = #{backIncomeAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="backFeeIncomeAmount != null">
+        back_fee_income_amount = #{backFeeIncomeAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="backFeeActuallyAmount != null">
+        back_fee_actually_amount = #{backFeeActuallyAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="compensateIncome != null">
+        compensate_income = #{compensateIncome,jdbcType=DECIMAL},
+      </if>
+      <if test="compensateCoupon != null">
+        compensate_coupon = #{compensateCoupon,jdbcType=DECIMAL},
+      </if>
+      <if test="compensateRemark != null">
+        compensate_remark = #{compensateRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="orderPayChannel != null">
+        order_pay_channel = #{orderPayChannel,jdbcType=TINYINT},
+      </if>
+      <if test="payChannelOrderNum != null">
+        pay_channel_order_num = #{payChannelOrderNum,jdbcType=VARCHAR},
+      </if>
+      <if test="orderPayNum != null">
+        order_pay_num = #{orderPayNum,jdbcType=VARCHAR},
+      </if>
+      <if test="backPayChannelOrderNum != null">
+        back_pay_channel_order_num = #{backPayChannelOrderNum,jdbcType=VARCHAR},
+      </if>
+      <if test="backOrderPayNum != null">
+        back_order_pay_num = #{backOrderPayNum,jdbcType=VARCHAR},
+      </if>
+      <if test="refundStatus != null">
+        refund_status = #{refundStatus,jdbcType=TINYINT},
+      </if>
+      <if test="refundTime != null">
+        refund_time = #{refundTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderStatus != null">
+        order_status = #{orderStatus,jdbcType=INTEGER},
+      </if>
+      <if test="deliveryNum != null">
+        delivery_num = #{deliveryNum,jdbcType=VARCHAR},
+      </if>
+      <if test="deliveryCompany != null">
+        delivery_company = #{deliveryCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsGetStatus != null">
+        goods_get_status = #{goodsGetStatus,jdbcType=TINYINT},
+      </if>
+      <if test="rebatePrice != null">
+        rebate_price = #{rebatePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="backAccountNum != null">
+        back_account_num = #{backAccountNum,jdbcType=VARCHAR},
+      </if>
+      <if test="backBankName != null">
+        back_bank_name = #{backBankName,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsSendStatus != null">
+        goods_send_status = #{goodsSendStatus,jdbcType=TINYINT},
+      </if>
+      <if test="sendDeliveryNum != null">
+        send_delivery_num = #{sendDeliveryNum,jdbcType=VARCHAR},
+      </if>
+      <if test="stopReason != null">
+        stop_reason = #{stopReason,jdbcType=VARCHAR},
+      </if>
+      <if test="expandDate != null">
+        expand_date = #{expandDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="showStatus != null">
+        show_status = #{showStatus,jdbcType=TINYINT},
+      </if>
+      <if test="cztOrderStatus != null">
+        czt_order_status = #{cztOrderStatus,jdbcType=TINYINT},
+      </if>
+      <if test="currentProcessor != null">
+        current_processor = #{currentProcessor,jdbcType=VARCHAR},
+      </if>
+      <if test="sendAddress != null">
+        send_address = #{sendAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="tagOne != null">
+        tag_one = #{tagOne,jdbcType=VARCHAR},
+      </if>
+      <if test="tagTwo != null">
+        tag_two = #{tagTwo,jdbcType=VARCHAR},
+      </if>
+      <if test="tagThree != null">
+        tag_three = #{tagThree,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null">
+        creator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updator != null">
+        updator = #{updator,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.demo.entity.model.TopOrderAfterApply">
+    update top_order_after_apply
+    set order_num = #{orderNum,jdbcType=VARCHAR},
+      order_item_num = #{orderItemNum,jdbcType=VARCHAR},
+      order_after_num = #{orderAfterNum,jdbcType=VARCHAR},
+      user_num = #{userNum,jdbcType=VARCHAR},
+      store_num = #{storeNum,jdbcType=VARCHAR},
+      purchase_type = #{purchaseType,jdbcType=TINYINT},
+      suppiler_num = #{suppilerNum,jdbcType=VARCHAR},
+      whole_type = #{wholeType,jdbcType=TINYINT},
+      order_type = #{orderType,jdbcType=TINYINT},
+      after_type = #{afterType,jdbcType=TINYINT},
+      reason_type = #{reasonType,jdbcType=TINYINT},
+      reason_name = #{reasonName,jdbcType=VARCHAR},
+      reason_des = #{reasonDes,jdbcType=VARCHAR},
+      reason_remark = #{reasonRemark,jdbcType=VARCHAR},
+      prove_picture = #{provePicture,jdbcType=VARCHAR},
+      prove_image = #{proveImage,jdbcType=VARCHAR},
+      refund_remark = #{refundRemark,jdbcType=VARCHAR},
+      review_type = #{reviewType,jdbcType=TINYINT},
+      process_now = #{processNow,jdbcType=TINYINT},
+      all_market_price = #{allMarketPrice,jdbcType=DECIMAL},
+      total_actually_amount = #{totalActuallyAmount,jdbcType=DECIMAL},
+      actually_amount = #{actuallyAmount,jdbcType=DECIMAL},
+      coupon_amount = #{couponAmount,jdbcType=DECIMAL},
+      income_amount = #{incomeAmount,jdbcType=DECIMAL},
+      fee_amount = #{feeAmount,jdbcType=DECIMAL},
+      back_fee_type = #{backFeeType,jdbcType=TINYINT},
+      back_percent = #{backPercent,jdbcType=DECIMAL},
+      back_actually_amount = #{backActuallyAmount,jdbcType=DECIMAL},
+      back_coupon_amount = #{backCouponAmount,jdbcType=DECIMAL},
+      back_income_amount = #{backIncomeAmount,jdbcType=DECIMAL},
+      back_fee_income_amount = #{backFeeIncomeAmount,jdbcType=DECIMAL},
+      back_fee_actually_amount = #{backFeeActuallyAmount,jdbcType=DECIMAL},
+      compensate_income = #{compensateIncome,jdbcType=DECIMAL},
+      compensate_coupon = #{compensateCoupon,jdbcType=DECIMAL},
+      compensate_remark = #{compensateRemark,jdbcType=VARCHAR},
+      order_pay_channel = #{orderPayChannel,jdbcType=TINYINT},
+      pay_channel_order_num = #{payChannelOrderNum,jdbcType=VARCHAR},
+      order_pay_num = #{orderPayNum,jdbcType=VARCHAR},
+      back_pay_channel_order_num = #{backPayChannelOrderNum,jdbcType=VARCHAR},
+      back_order_pay_num = #{backOrderPayNum,jdbcType=VARCHAR},
+      refund_status = #{refundStatus,jdbcType=TINYINT},
+      refund_time = #{refundTime,jdbcType=TIMESTAMP},
+      order_status = #{orderStatus,jdbcType=INTEGER},
+      delivery_num = #{deliveryNum,jdbcType=VARCHAR},
+      delivery_company = #{deliveryCompany,jdbcType=VARCHAR},
+      goods_get_status = #{goodsGetStatus,jdbcType=TINYINT},
+      rebate_price = #{rebatePrice,jdbcType=DECIMAL},
+      back_account_num = #{backAccountNum,jdbcType=VARCHAR},
+      back_bank_name = #{backBankName,jdbcType=VARCHAR},
+      goods_send_status = #{goodsSendStatus,jdbcType=TINYINT},
+      send_delivery_num = #{sendDeliveryNum,jdbcType=VARCHAR},
+      stop_reason = #{stopReason,jdbcType=VARCHAR},
+      expand_date = #{expandDate,jdbcType=TIMESTAMP},
+      remark = #{remark,jdbcType=VARCHAR},
+      show_status = #{showStatus,jdbcType=TINYINT},
+      czt_order_status = #{cztOrderStatus,jdbcType=TINYINT},
+      current_processor = #{currentProcessor,jdbcType=VARCHAR},
+      send_address = #{sendAddress,jdbcType=VARCHAR},
+      tag_one = #{tagOne,jdbcType=VARCHAR},
+      tag_two = #{tagTwo,jdbcType=VARCHAR},
+      tag_three = #{tagThree,jdbcType=VARCHAR},
+      creator = #{creator,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      updator = #{updator,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
